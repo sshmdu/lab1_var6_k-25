@@ -163,6 +163,12 @@ int main(int argc, char* argv[]) {
             run_experiment(n, k);
         }
         else {
+            std::cout << "Demo-run using external file\n";
+            TestGenerator demo_gen("questions_demo.txt", 3);
+            std::cout << "Loaded " << demo_gen.get_total_questions_count()
+                << " questions from questions_demo.txt\n";
+            std::cout << "Sample generated variant:\n";
+            std::cout << demo_gen() << "\n";
             std::cout << "Automatic tests:\n";
             run_experiment(4, 2);
             run_experiment(5, 3);
